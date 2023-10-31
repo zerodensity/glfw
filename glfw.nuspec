@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+    <metadata>
+        <id>glfw</id>
+        <version>0.0.1</version>
+        <description>glfw</description>
+		<authors>glfw</authors>
+        <tags></tags>
+		<projectUrl>https://github.com/zerodensity/glfw</projectUrl>
+		<repository type="git" url="https://github.com/zerodensity/glfw.git" />
+    </metadata>
+     
+    <files>
+        <file src="build\src\Release\*" target="glfw\lib"/>
+        <file src="include\GLFW\*" target="glfw\include"/>
+    </files>
+</package>
