@@ -111,7 +111,9 @@ LRESULT hit_test(_GLFWwindow* wnd, HWND handle, POINT cursor) {
         right * (cursor.x >= (window.right - border.x)) |
         top * (cursor.y < (window.top + border.y)) |
         bottom * (cursor.y >= (window.bottom - border.y));
-
+    
+    g_Cursor = 1;
+    
     switch (result) {
     case left: return HTLEFT;
     case right: return HTRIGHT;
@@ -121,7 +123,7 @@ LRESULT hit_test(_GLFWwindow* wnd, HWND handle, POINT cursor) {
     case top | right: return  HTTOPRIGHT;
     case bottom | left: return HTBOTTOMLEFT;
     case bottom | right: return HTBOTTOMRIGHT;
-    case client: return drag;
+    case client: g_Cursor = 0; return drag;
     default: return HTNOWHERE;
     }
 }
